@@ -9,6 +9,16 @@ import UIKit
 import Alamofire
 import SnapKit
 
+struct BoxOfficeResult: Decodable {
+    let boxofficeType, showRange: String
+    let dailyBoxOfficeList: [Movie]
+}
+
+struct MovieBoxOfficeResult: Decodable {
+    let boxOfficeResult: BoxOfficeResult
+}
+
+
 struct Movie: Decodable {
     let rank: String?
     let openDt: String?
@@ -70,18 +80,19 @@ class MovieListViewController: UIViewController {
     @objc func searchButtonTapped() {
         print("3")
         
+        guard let text = searchTextField.text else { return }
         
-//        AF.request(APIURL.movieURL).responseDecodable(of: [Movie].self) { response in
-//            switch response.result {
-//            case .success(let value):
-//                print("SUCCESS")
-//                
-//                //                self.list = value
-//                self.tableView.reloadData()
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+        AF.request("\(APIURL.movieURL)key=\(APIKey.movieKey)&targetDt=\(text)").responseDecodable(of: [Movie].self) { response in
+            switch response.result {
+            case .success(let value):
+                print("SUCCESS")
+                
+                //                self.list = value
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
         
 //        AF.request(APIURL.movieURL).responseString { response in
 //            switch response.result {

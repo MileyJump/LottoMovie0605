@@ -24,7 +24,7 @@ struct Lotto: Decodable {
 class ViewController: UIViewController {
     
     let pickerView = UIPickerView()
-    let numbers = Array(1...1200)
+    let numbers = Array(Array(1...1200).reversed())
     
     
     
