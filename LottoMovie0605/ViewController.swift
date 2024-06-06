@@ -6,9 +6,27 @@
 //
 
 import UIKit
+import Alamofire
 import SnapKit
 
+struct Lotto: Decodable {
+    let drwNoDate: String
+    let drwtNo1: Int
+    let drwtNo2: Int
+    let drwtNo3: Int
+    let drwtNo4: Int
+    let drwtNo5: Int
+    let drwtNo6: Int
+    let drwNo: Int
+    let bnusNo: Int
+}
+
 class ViewController: UIViewController {
+    
+    let pickerView = UIPickerView()
+    let numbers = Array(1...1200)
+    
+    
     
     let numberTextField: UITextField = {
         let textField = UITextField()
@@ -154,7 +172,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureHierarchy()
         configureConstraints()
+        numberTextField.inputView = pickerView
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
     }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -227,12 +250,48 @@ class ViewController: UIViewController {
             make.horizontalEdges.equalTo(seventhNumberLabel)
         }
     }
-    
-    func configureAddTarget() {
-        numberTextField.addTarget(self, action: #selector(numberTextFieldTapped), for: .touchUpInside)
-    }
-    
-    @objc func numberTextFieldTapped() {
-        print("==")
-    }
 }
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return numbers.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(numbers[row])"
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        numberTextField.text = "\(numbers[row])"
+        
+        let number = numbers[row]
+ 
+        numberLabel.text = "\(number)회"
+        
+        AF.request("\(APIURL.lottoURL)\(number)").responseDecodable(of: Lotto.self) { response in
+            switch response.result {
+            case .success(let value):
+                self.numberTextField.text = "\(value.drwNo)"
+                self.firstNumberLabel.text = "\(value.drwtNo1)"
+                self.secondNumberLabel.text = "\(value.drwtNo2)"
+                self.thirdNumberLabel.text = "\(value.drwtNo3)"
+                self.fourthNumberLabel.text = "\(value.drwtNo4)"
+                self.fifthNumberLabel.text = "\(value.drwtNo5)"
+                self.sixthNumberLabel.text = "\(value.drwtNo6)"
+                self.seventhNumberLabel.text = "\(value.bnusNo)"
+            case .failure(let error):
+                print(error)
+            }
+        }
+        view.endEditing(true)
+    }
+    
+    
+}
+

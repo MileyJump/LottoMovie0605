@@ -15,6 +15,8 @@
 		B03A1A472C11A847006CFB9C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B03A1A462C11A847006CFB9C /* Base */; };
 		B03A1A502C11ACDD006CFB9C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B03A1A4F2C11ACDD006CFB9C /* SnapKit */; };
 		B03A1A532C11ACEC006CFB9C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B03A1A522C11ACEC006CFB9C /* Alamofire */; };
+		B03A1A552C11C4DC006CFB9C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B03A1A542C11C4DC006CFB9C /* .gitignore */; };
+		B03A1A572C11C51E006CFB9C /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A1A562C11C51E006CFB9C /* APIURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		B03A1A432C11A847006CFB9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B03A1A462C11A847006CFB9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B03A1A482C11A847006CFB9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B03A1A542C11C4DC006CFB9C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B03A1A562C11C51E006CFB9C /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,7 @@
 		B03A1A2E2C11A845006CFB9C = {
 			isa = PBXGroup;
 			children = (
+				B03A1A542C11C4DC006CFB9C /* .gitignore */,
 				B03A1A392C11A845006CFB9C /* LottoMovie0605 */,
 				B03A1A382C11A845006CFB9C /* Products */,
 			);
@@ -67,6 +72,7 @@
 				B03A1A432C11A847006CFB9C /* Assets.xcassets */,
 				B03A1A452C11A847006CFB9C /* LaunchScreen.storyboard */,
 				B03A1A482C11A847006CFB9C /* Info.plist */,
+				B03A1A562C11C51E006CFB9C /* APIURL.swift */,
 			);
 			path = LottoMovie0605;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03A1A552C11C4DC006CFB9C /* .gitignore in Resources */,
 				B03A1A442C11A847006CFB9C /* Assets.xcassets in Resources */,
 				B03A1A472C11A847006CFB9C /* Base in Resources */,
 				B03A1A422C11A846006CFB9C /* Base in Resources */,
@@ -150,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03A1A572C11C51E006CFB9C /* APIURL.swift in Sources */,
 				B03A1A3F2C11A846006CFB9C /* ViewController.swift in Sources */,
 				B03A1A3B2C11A846006CFB9C /* AppDelegate.swift in Sources */,
 				B03A1A3D2C11A846006CFB9C /* SceneDelegate.swift in Sources */,
