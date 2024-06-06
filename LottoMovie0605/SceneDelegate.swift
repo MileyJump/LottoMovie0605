@@ -19,9 +19,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let vc = ViewController()
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
+        let movievc = MovieListViewController()
         
+        let lottoVC = UINavigationController(rootViewController: vc)
+        let moviewVC = UINavigationController(rootViewController: movievc)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([lottoVC, movievc], animated: true)
+        if let items = tabBarController.tabBar.items {
+            items[0].image = UIImage(systemName: "l.joystick")
+            items[0].selectedImage = UIImage(systemName: "l.joystick.fill")
+            items[0].title = "로또"
+            
+            items[1].image = UIImage(systemName: "popcorn")
+            items[1].selectedImage = UIImage(systemName: "popcorn.fill")
+            items[1].title = "뮤비"
+            
+        }
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
         
     }
 

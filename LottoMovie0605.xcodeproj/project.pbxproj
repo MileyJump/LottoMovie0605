@@ -17,6 +17,7 @@
 		B03A1A552C11C4DC006CFB9C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B03A1A542C11C4DC006CFB9C /* .gitignore */; };
 		B03A1A572C11C51E006CFB9C /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A1A562C11C51E006CFB9C /* APIURL.swift */; };
 		B03A1A592C11D6F8006CFB9C /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A1A582C11D6F8006CFB9C /* MovieListViewController.swift */; };
+		B03A1A5B2C11E687006CFB9C /* MovieListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A1A5A2C11E687006CFB9C /* MovieListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B03A1A542C11C4DC006CFB9C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B03A1A562C11C51E006CFB9C /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
 		B03A1A582C11D6F8006CFB9C /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		B03A1A5A2C11E687006CFB9C /* MovieListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				B03A1A3C2C11A846006CFB9C /* SceneDelegate.swift */,
 				B03A1A3E2C11A846006CFB9C /* ViewController.swift */,
 				B03A1A582C11D6F8006CFB9C /* MovieListViewController.swift */,
+				B03A1A5A2C11E687006CFB9C /* MovieListTableViewCell.swift */,
 				B03A1A432C11A847006CFB9C /* Assets.xcassets */,
 				B03A1A452C11A847006CFB9C /* LaunchScreen.storyboard */,
 				B03A1A482C11A847006CFB9C /* Info.plist */,
@@ -160,6 +163,7 @@
 				B03A1A592C11D6F8006CFB9C /* MovieListViewController.swift in Sources */,
 				B03A1A3F2C11A846006CFB9C /* ViewController.swift in Sources */,
 				B03A1A3B2C11A846006CFB9C /* AppDelegate.swift in Sources */,
+				B03A1A5B2C11E687006CFB9C /* MovieListTableViewCell.swift in Sources */,
 				B03A1A3D2C11A846006CFB9C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
