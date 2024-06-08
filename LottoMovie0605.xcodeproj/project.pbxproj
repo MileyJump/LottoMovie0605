@@ -21,6 +21,8 @@
 		B03A1A5D2C14295C006CFB9C /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A1A5C2C14295C006CFB9C /* MovieModel.swift */; };
 		B03A1A602C1429A5006CFB9C /* LottoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A1A5F2C1429A5006CFB9C /* LottoModel.swift */; };
 		B03A1A642C142A6F006CFB9C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A1A632C142A6F006CFB9C /* WeatherViewController.swift */; };
+		B03A1A662C143A67006CFB9C /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A1A652C143A67006CFB9C /* WeatherModel.swift */; };
+		B03A1A692C144EE0006CFB9C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B03A1A682C144EE0006CFB9C /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,7 @@
 		B03A1A5C2C14295C006CFB9C /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		B03A1A5F2C1429A5006CFB9C /* LottoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoModel.swift; sourceTree = "<group>"; };
 		B03A1A632C142A6F006CFB9C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		B03A1A652C143A67006CFB9C /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03A1A692C144EE0006CFB9C /* Kingfisher in Frameworks */,
 				B03A1A502C11ACDD006CFB9C /* SnapKit in Frameworks */,
 				B03A1A532C11ACEC006CFB9C /* Alamofire in Frameworks */,
 			);
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				B03A1A632C142A6F006CFB9C /* WeatherViewController.swift */,
+				B03A1A652C143A67006CFB9C /* WeatherModel.swift */,
 			);
 			path = "Weather ";
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			packageProductDependencies = (
 				B03A1A4F2C11ACDD006CFB9C /* SnapKit */,
 				B03A1A522C11ACEC006CFB9C /* Alamofire */,
+				B03A1A682C144EE0006CFB9C /* Kingfisher */,
 			);
 			productName = LottoMovie0605;
 			productReference = B03A1A372C11A845006CFB9C /* LottoMovie0605.app */;
@@ -164,6 +170,7 @@
 			packageReferences = (
 				B03A1A4E2C11ACDD006CFB9C /* XCRemoteSwiftPackageReference "SnapKit" */,
 				B03A1A512C11ACEC006CFB9C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B03A1A672C144EE0006CFB9C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = B03A1A382C11A845006CFB9C /* Products */;
 			projectDirPath = "";
@@ -196,6 +203,7 @@
 				B03A1A642C142A6F006CFB9C /* WeatherViewController.swift in Sources */,
 				B03A1A572C11C51E006CFB9C /* APIURL.swift in Sources */,
 				B03A1A592C11D6F8006CFB9C /* MovieListViewController.swift in Sources */,
+				B03A1A662C143A67006CFB9C /* WeatherModel.swift in Sources */,
 				B03A1A3F2C11A846006CFB9C /* ViewController.swift in Sources */,
 				B03A1A3B2C11A846006CFB9C /* AppDelegate.swift in Sources */,
 				B03A1A5B2C11E687006CFB9C /* MovieListTableViewCell.swift in Sources */,
@@ -441,6 +449,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		B03A1A672C144EE0006CFB9C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -453,6 +469,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B03A1A512C11ACEC006CFB9C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		B03A1A682C144EE0006CFB9C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B03A1A672C144EE0006CFB9C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

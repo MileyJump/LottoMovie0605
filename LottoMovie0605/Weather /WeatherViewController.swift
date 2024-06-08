@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import Alamofire
+import Kingfisher
 
 class WeatherViewController: UIViewController {
     
-    let dateLabel: UILabel = {
+    lazy var dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "10월 24일 09시 42분"
+        label.text = nowDate()
         label.textColor = .white
         label.font = .systemFont(ofSize: 14)
         return label
@@ -98,6 +100,9 @@ class WeatherViewController: UIViewController {
     let weatherImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .white
+        
+        
+        
 //        imageView.image = UIImage(systemName: "sun.min.fill")
         imageView.layer.cornerRadius = 8
         return imageView
@@ -114,7 +119,7 @@ class WeatherViewController: UIViewController {
         let label = UILabel()
         label.textColor = .black
         label.font = .systemFont(ofSize: 16)
-        label.text = "오늘도 행복한 하루 보내세요"
+        label.text = "오늘도 행복한 하루 보내세요❤️"
         return label
     }()
     
@@ -123,6 +128,34 @@ class WeatherViewController: UIViewController {
         view.backgroundColor = .systemOrange
         configureHierarchy()
         configureConstraints()
+        weatherAPI()
+    }
+    
+    func weatherAPI() {
+        
+        
+        
+        AF.request("\(APIURL.weatherURL)\(APIKey.weatherKey)").responseDecodable(of: WeatherModel.self) { response in
+            switch response.result {
+            case .success(let value):
+                print(value)
+                self.locationLabel.text = "\(value.name)"
+                let url = URL(string: "\(APIURL.weatherIcon)\(value.weather[0].icon)@2x.png")
+                self.weatherImageView.kf.setImage(with: url)
+                self.humidityLabel.text = value.main.dehumidity
+                self.windLabel.text = value.wind.windSpped
+                self.temperatureLabel.text = value.main.temperature
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
+    }
+    
+    func nowDate() -> String {
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "MM월 dd일 HH시 mm분"
+        let saveDateformatter = dateformatter.string(from: Date())
+        return saveDateformatter
     }
     
     func configureHierarchy() {
