@@ -18,7 +18,6 @@ struct MovieBoxOfficeResult: Decodable {
     let boxOfficeResult: BoxOfficeResult
 }
 
-
 struct Movie: Decodable {
     let rank: String?
     let openDt: String?
@@ -31,14 +30,14 @@ class MovieListViewController: UIViewController {
     
     let backgroundView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "스즈메의문단속")
-        imageView.alpha = 0.7
+        imageView.image = UIImage(named: "수리남")
+        imageView.alpha = 1
         return imageView
     }()
  
     let searchTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "검색하세요"
+        textField.attributedPlaceholder = NSAttributedString(string: "20240607 형식으로 입력하세요", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         textField.textColor = .white
         return textField
     }()
@@ -80,29 +79,30 @@ class MovieListViewController: UIViewController {
     @objc func searchButtonTapped() {
         print("3")
         
+        
+        
         guard let text = searchTextField.text else { return }
         
-        AF.request("\(APIURL.movieURL)key=\(APIKey.movieKey)&targetDt=\(text)").responseDecodable(of: [Movie].self) { response in
+        AF.request("\(APIURL.movieURL)\(text)").responseDecodable(of: MovieBoxOfficeResult.self) { response in
             switch response.result {
             case .success(let value):
-                print("SUCCESS")
-                
-                //                self.list = value
+                print("성공!")
+                self.list = value.boxOfficeResult.dailyBoxOfficeList
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
         }
         
-//        AF.request(APIURL.movieURL).responseString { response in
+        
+//        AF.request(url).responseString { response in
 //            switch response.result {
 //            case .success(let value):
 //                print(value)
 //            case .failure(let error):
-//                print(error)
+//                print("error")
 //            }
 //        }
-        
     }
     
     func configureTableView() {
@@ -159,11 +159,13 @@ class MovieListViewController: UIViewController {
 
 extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieListTableViewCell.id, for: indexPath) as! MovieListTableViewCell
+        
+        cell.configureCell(data: list[indexPath.row])
         
         return cell
     }

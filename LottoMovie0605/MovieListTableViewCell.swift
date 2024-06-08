@@ -14,7 +14,8 @@ class MovieListTableViewCell: UITableViewCell {
     let numberLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .white
-        label.font = .boldSystemFont(ofSize: 15)
+        label.font = .boldSystemFont(ofSize: 18)
+        label.textAlignment = .center
         return label
     }()
     
@@ -42,6 +43,14 @@ class MovieListTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configureCell(data: Movie) {
+        self.numberLabel.text = data.rank
+        self.movieNameLabel.text = data.movieNm
+        self.dateLabel.text = data.openDt
+        
+    }
+    
     func configureHierarchy() {
         contentView.addSubview(numberLabel)
         contentView.addSubview(movieNameLabel)
@@ -52,8 +61,8 @@ class MovieListTableViewCell: UITableViewCell {
         numberLabel.snp.makeConstraints { make in
             make.leading.equalTo(contentView).inset(20)
             make.verticalEdges.equalTo(contentView).inset(10)
-            make.height.equalTo(40)
-            make.width.equalTo(numberLabel.snp.height).multipliedBy(1.2)
+            make.height.equalTo(25)
+            make.width.equalTo(numberLabel.snp.height).multipliedBy(1.8)
         }
         
         dateLabel.snp.makeConstraints { make in
