@@ -9,17 +9,6 @@ import UIKit
 import Alamofire
 import SnapKit
 
-struct Lotto: Decodable {
-    let drwNoDate: String
-    let drwtNo1: Int
-    let drwtNo2: Int
-    let drwtNo3: Int
-    let drwtNo4: Int
-    let drwtNo5: Int
-    let drwtNo6: Int
-    let drwNo: Int
-    let bnusNo: Int
-}
 
 class ViewController: UIViewController {
     

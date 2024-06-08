@@ -9,20 +9,6 @@ import UIKit
 import Alamofire
 import SnapKit
 
-struct BoxOfficeResult: Decodable {
-    let boxofficeType, showRange: String
-    let dailyBoxOfficeList: [Movie]
-}
-
-struct MovieBoxOfficeResult: Decodable {
-    let boxOfficeResult: BoxOfficeResult
-}
-
-struct Movie: Decodable {
-    let rank: String?
-    let openDt: String?
-    let movieNm: String?
-}
 
 class MovieListViewController: UIViewController {
     
@@ -78,8 +64,7 @@ class MovieListViewController: UIViewController {
     
     @objc func searchButtonTapped() {
         print("3")
-        
-        
+
         
         guard let text = searchTextField.text else { return }
         
