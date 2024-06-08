@@ -20,12 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let vc = ViewController()
         let movievc = MovieListViewController()
+        let weathervc = WeatherViewController()
         
         let lottoVC = UINavigationController(rootViewController: vc)
         let moviewVC = UINavigationController(rootViewController: movievc)
+        let weatherVC = UINavigationController(rootViewController: weathervc)
         
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([lottoVC, movievc], animated: true)
+        tabBarController.setViewControllers([lottoVC, moviewVC, weatherVC], animated: true)
         if let items = tabBarController.tabBar.items {
             items[0].image = UIImage(systemName: "l.joystick")
             items[0].selectedImage = UIImage(systemName: "l.joystick.fill")
@@ -34,6 +36,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[1].image = UIImage(systemName: "popcorn")
             items[1].selectedImage = UIImage(systemName: "popcorn.fill")
             items[1].title = "뮤비"
+            
+            items[2].image = UIImage(systemName: "moon.stars")
+            items[2].selectedImage = UIImage(systemName: "moon.stars.fill")
+            items[2].title = "날씨"
             
         }
         
