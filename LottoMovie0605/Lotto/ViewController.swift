@@ -131,7 +131,12 @@ class ViewController: UIViewController {
         label.textColor = .white
         label.backgroundColor = .lightGray
         label.textAlignment = .center
+        let size: CGFloat = 40.0
+        label.frame = .init(x: 0, y: 0, width: size, height: size)
+        
+        label.layer.cornerRadius = size / 2
         label.text = "6"
+        label.layer.masksToBounds = true
         return label
     }()
     
@@ -162,18 +167,21 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         configureHierarchy()
         configureConstraints()
+        
         numberTextField.inputView = pickerView
         pickerView.delegate = self
         pickerView.dataSource = self
+        
         
     }
     
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         [firstNumberLabel, secondNumberLabel, thirdNumberLabel, fourthNumberLabel, fifthNumberLabel, sixthNumberLabel, pluslabel, seventhNumberLabel].forEach { label in
                label.layer.cornerRadius = label.frame.height / 2
-               label.clipsToBounds = true
+            label.layer.masksToBounds = true
            }
     }
     
@@ -226,13 +234,13 @@ class ViewController: UIViewController {
         
         labelStackView.snp.makeConstraints { make in
             make.top.equalTo(numberLabel.snp.bottom).offset(20)
-            make.horizontalEdges.equalTo(numberTextField)
-            make.height.equalTo(70)
+            //make.horizontalEdges.equalTo(numberTextField)
+            make.height.equalTo(40)
         }
         
         [firstNumberLabel, secondNumberLabel, thirdNumberLabel, fourthNumberLabel, fifthNumberLabel, sixthNumberLabel, pluslabel, seventhNumberLabel].forEach { label in
                  label.snp.makeConstraints { make in
-                     make.height.equalTo(label.snp.width)
+                     make.size.equalTo(labelStackView.snp.height)
                  }
              }
         bonusNumberLabel.snp.makeConstraints { make in

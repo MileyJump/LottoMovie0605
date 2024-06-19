@@ -33,9 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[0].selectedImage = UIImage(systemName: "l.joystick.fill")
             items[0].title = "로또"
             
-            items[1].image = UIImage(systemName: "popcorn")
-            items[1].selectedImage = UIImage(systemName: "popcorn.fill")
-            items[1].title = "뮤비"
+           
             
             items[2].image = UIImage(systemName: "moon.stars")
             items[2].selectedImage = UIImage(systemName: "moon.stars.fill")

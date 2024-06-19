@@ -78,16 +78,6 @@ class MovieListViewController: UIViewController {
                 print(error)
             }
         }
-        
-        
-//        AF.request(url).responseString { response in
-//            switch response.result {
-//            case .success(let value):
-//                print(value)
-//            case .failure(let error):
-//                print("error")
-//            }
-//        }
     }
     
     func configureTableView() {
