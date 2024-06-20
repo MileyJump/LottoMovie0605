@@ -23,6 +23,8 @@
 		B03A1A642C142A6F006CFB9C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A1A632C142A6F006CFB9C /* WeatherViewController.swift */; };
 		B03A1A662C143A67006CFB9C /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A1A652C143A67006CFB9C /* WeatherModel.swift */; };
 		B03A1A692C144EE0006CFB9C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B03A1A682C144EE0006CFB9C /* Kingfisher */; };
+		B07B0AB22C24549A005C282F /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B0AB12C24549A005C282F /* WeatherManager.swift */; };
+		B07B0AB42C24551B005C282F /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07B0AB32C24551B005C282F /* MovieManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		B03A1A5F2C1429A5006CFB9C /* LottoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoModel.swift; sourceTree = "<group>"; };
 		B03A1A632C142A6F006CFB9C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		B03A1A652C143A67006CFB9C /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		B07B0AB12C24549A005C282F /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		B07B0AB32C24551B005C282F /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				B03A1A5C2C14295C006CFB9C /* MovieModel.swift */,
 				B03A1A582C11D6F8006CFB9C /* MovieListViewController.swift */,
 				B03A1A5A2C11E687006CFB9C /* MovieListTableViewCell.swift */,
+				B07B0AB32C24551B005C282F /* MovieManager.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			children = (
 				B03A1A632C142A6F006CFB9C /* WeatherViewController.swift */,
 				B03A1A652C143A67006CFB9C /* WeatherModel.swift */,
+				B07B0AB12C24549A005C282F /* WeatherManager.swift */,
 			);
 			path = "Weather ";
 			sourceTree = "<group>";
@@ -203,8 +209,10 @@
 				B03A1A642C142A6F006CFB9C /* WeatherViewController.swift in Sources */,
 				B03A1A572C11C51E006CFB9C /* APIURL.swift in Sources */,
 				B03A1A592C11D6F8006CFB9C /* MovieListViewController.swift in Sources */,
+				B07B0AB42C24551B005C282F /* MovieManager.swift in Sources */,
 				B03A1A662C143A67006CFB9C /* WeatherModel.swift in Sources */,
 				B03A1A3F2C11A846006CFB9C /* ViewController.swift in Sources */,
+				B07B0AB22C24549A005C282F /* WeatherManager.swift in Sources */,
 				B03A1A3B2C11A846006CFB9C /* AppDelegate.swift in Sources */,
 				B03A1A5B2C11E687006CFB9C /* MovieListTableViewCell.swift in Sources */,
 				B03A1A602C1429A5006CFB9C /* LottoModel.swift in Sources */,

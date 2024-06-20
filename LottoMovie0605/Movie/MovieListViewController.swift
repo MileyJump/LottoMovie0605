@@ -65,19 +65,7 @@ class MovieListViewController: UIViewController {
     @objc func searchButtonTapped() {
         print("3")
 
-        
-        guard let text = searchTextField.text else { return }
-        
-        AF.request("\(APIURL.movieURL)\(text)").responseDecodable(of: MovieBoxOfficeResult.self) { response in
-            switch response.result {
-            case .success(let value):
-                print("성공!")
-                self.list = value.boxOfficeResult.dailyBoxOfficeList
-                self.tableView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
-        }
+      
     }
     
     func configureTableView() {
